@@ -1,5 +1,5 @@
 /* 常用正则表达式 */
-表单验证时使用RegExp.test(string),返回ture|false;
+表单验证时使用RegExp.test(string),返回ture|false
 
 // 手机号
 /^1[34578]\d{9}$/
