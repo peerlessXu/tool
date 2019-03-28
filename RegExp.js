@@ -23,3 +23,36 @@
 
 // 邮箱
 /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/
+
+// 比如我们把字符串的开头和结尾用"#"替换（位置可以替换成字符的！）
+var result = "hello".replace(/^|$/g, '#');
+console.log(result); 
+// => "#hello#"
+
+// 比如一个文件名是"[JS] Lesson_01.mp4"中的\b，如下
+var result = "[JS] Lesson_01.mp4".replace(/\b/g, '#');
+console.log(result); 
+// => "[#JS#] #Lesson_01#.#mp4#"
+
+// 比如(?=l)，表示'l'字符前面的位置
+var result = "hello".replace(/(?=l)/g, '#');
+console.log(result); 
+// => "he#l#lo"
+
+// 而(?!p)就是(?=p)的反面意思
+var result = "hello".replace(/(?!l)/g, '#');
+console.log(result); 
+// => "#h#ell#o#"
+
+// 把"12345678"，变成"12,345,678"
+var string1 = "12345678",
+string2 = "123456789";
+reg = /(?!^)(?=(\d{3})+$)/g;
+var result = string1.replace(reg, ',')
+console.log(result); 
+// => "12,345,678"
+result = string2.replace(reg, ',');
+console.log(result); 
+// => "123,456,789"
+
+
